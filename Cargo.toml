@@ -1,6 +1,10 @@
 [package]
-name = "recorder"
 version = "0.1.0"
+name = "recorder"
+description = "Generate data-only structs with utilities easily"
+authors = ["Kot"]
+homepage = "https://github.com/kotx/recorder"
+repository = "https://github.com/kotx/recorder.git"
 license = "MIT"
 edition = "2021"
 
