@@ -1,4 +1,3 @@
-#![feature(drain_filter)]
 use proc_macro::TokenStream;
 use quote::quote;
 
