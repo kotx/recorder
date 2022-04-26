@@ -28,11 +28,6 @@ fn parse_inner_attr_args(raw_args: Vec<syn::NestedMeta>) -> InnerAttrArgs {
                     panic!("Unsupported argument");
                 }
             },
-            // syn::NestedMeta::Lit(syn::Lit::Verbatim(lit)) => {
-            //     if lit.to_string() == *"skip" {
-            //         parsed_args.skip = true;
-            //     }
-            // }
             _ => {
                 panic!("Unsupported argument");
             }
