@@ -5,7 +5,7 @@ Simple record types for Rust
 ## Getting Started
 
 Here's a simple example:
-```rs
+```rust
 #[recorder::record] // this struct will be #[derive(Debug, Serialize, Deserialize)]
 pub struct MyRecord {
     a: String, // this will be `pub`
