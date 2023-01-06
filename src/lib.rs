@@ -40,7 +40,7 @@ fn parse_inner_attr_args(raw_args: Vec<syn::NestedMeta>) -> InnerAttrArgs {
 /// The macro that processes structs.
 /// # Examples
 /// ```
-/// #[recorder::record] // this struct will be #[derive(Debug, Serialize, Deserialize)]
+/// #[recorder::record] // this struct will be #[derive(Debug, Clone, Serialize, Deserialize)]
 /// pub struct MyRecord {
 ///     a: String, // this will be `pub`
 ///     b: u8, // this too!
@@ -61,9 +61,9 @@ pub fn record(raw_args: TokenStream, raw_input: TokenStream) -> TokenStream {
     let semi_token = &input.semi_token;
 
     let attrs = if cfg!(feature = "serde") {
-        quote! { #[derive(Debug, serde::Serialize, serde::Deserialize )]}
+        quote! { #[derive(Debug, Clone, serde::Serialize, serde::Deserialize )]}
     } else {
-        quote! { #[derive(Debug)] }
+        quote! { #[derive(Debug, Clone)] }
     }
     .into_iter();
 
